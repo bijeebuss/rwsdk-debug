@@ -1,0 +1,21 @@
+{
+  "name": "Ubuntu",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // "initializeCommand": "mkdir -p -m 700 ~/.gnupg ~/.password-store",
+  "mounts": [
+    // "source=/var/run/user/1000/docker.sock,target=/var/run/docker.sock,type=bind",
+    "source=${localEnv:HOME}/.zshrc,target=/home/ubuntu/.zshrc,type=bind",
+    "source=${localEnv:HOME}/.zsh_history,target=/home/ubuntu/.zsh_history,type=bind",
+    // "source=${localEnv:HOME}/.gnupg,target=/home/ubuntu/.gnupg,type=bind",
+    // "source=${localEnv:HOME}/.password-store,target=/home/ubuntu/.password-store,type=bind",
+    "source=${localEnv:HOME}/.ssh,target=/home/ubuntu/.ssh,type=bind"
+    // "source=${localEnv:HOME}/bin,target=/root/bin,type=bind",
+    // "source=${localEnv:HOME}/.docker/cert.pem,target=/root/.docker/cert.pem,type=bind",
+    // "source=${localEnv:HOME}/.docker/key.pem,target=/root/.docker/key.pem,type=bind",
+    // "source=${localEnv:HOME}/Documents/certs/docker,target=/root/Documents/certs/docker,type=bind",
+
+  ],
+  "remoteUser": "ubuntu"
+}
