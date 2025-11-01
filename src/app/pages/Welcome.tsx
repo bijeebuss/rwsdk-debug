@@ -1,12 +1,7 @@
 "use client";
-/**
- * This is a minimal welcome page for the starter.
- *
- * _Feel free to delete this file_
- **/
-
 import { useState } from "react";
 import styles from "./Welcome.module.css";
+import { addTodo } from "./functions.js";
 
 export const Welcome = () => {
   return (
@@ -86,10 +81,7 @@ const Copy = ({ textToCopy }: { textToCopy: string }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(textToCopy).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
+    addTodo(new FormData()); // Example usage of the server function
   };
 
   return (
