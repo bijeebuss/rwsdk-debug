@@ -1,4 +1,21 @@
 {
+
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "TEST_DURABLE_OBJECT",
+        "class_name": "TestDurableObject",
+      },
+    ],
+  },
+  "migrations": [
+  {
+    "tag": "v1",
+    "new_classes": [
+      "TestDurableObject"
+    ]
+  }
+  ],
   // Schema reference for wrangler configuration
   "$schema": "node_modules/wrangler/config-schema.json",
 
